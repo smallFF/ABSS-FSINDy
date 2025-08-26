@@ -82,19 +82,19 @@ In this section, we list all the codes, figures, and tables for easy reference b
 
 #### For the manuscript
 All figures and tables appear in the manuscript (except for the schematic diagram or flow chart).
-`EX_3D_Linear.m`: Figures 3-5, Table 2.
-`EX_HD_Lorenz_96.m`: Produce the results of Figure 6 by changing the dimension variable $n$ within the code.
-`EX_HD_Lorenz_96_ErrorAnalysis_and_SingularValueAnalysis.m`: Figures 7 and 8.
-`CEX_3D_Linear.m`: Figures 9-11, Table 3.
-`CEX_3D_Linear_Noisy_Observations.fig`: Modification of Figure 9.
-`EX_3D_EulerRigidBodyDynamics.m`: Figures 12-14.
-`EX_TimeConsumptionAnalysis_Summary.m`: Figures 16-19. This script summarizes all relevent results in Section 3.5. The specific calculation procedure is as follows:
-- `EX_TimeConsumptionAnalysis_SRBased_Low.m`: Symbolic regression based simulation for low-dimensional systems. This file generates the data for Figure Figures 16(a) and 16(b).
-- `EX_TimeConsumptionAnalysis_FSINDyBased_Low.m`: FSINDy based simulation for low-dimensional systems. This file generates the data for Figures 16(c) and 16(d).
-- `EX_TimeConsumptionAnalysis_SRBased_High.m`: FSINDy based simulation for some high-dimensional systems. This file generates the data for Figures 17(a) and 17(b).
-- `EX_TimeConsumptionAnalysis_FSINDyBased_High.m`: Symbolic regression based simulation for some high-dimensional systems. This file generates the data for Figure Figures 17(c) and 17(d).
-- `EX_TimeConsumptionAnalysis_SRBased_High_Lorenz96.m`: Symbolic regression based simulation for the Lorenz 96 system (dimension from 4 to 20). This file generates the data for Figures 18(a) and 18(b).
-- `EX_TimeConsumptionAnalysis_FSINDyBased_High_Lorenz96.m`: FSINDy based simulation for the Lorenz 96 system (dimension from 4 to 20). This file generates the data for Figure Figures 18(c) and 18(d).
+- `EX_3D_Linear.m`: Figures 3-5, Table 2.
+- `EX_HD_Lorenz_96.m`: Produce the results of Figure 6 by changing the dimension variable $n$ within the code.
+- `EX_HD_Lorenz_96_ErrorAnalysis_and_SingularValueAnalysis.m`: Figures 7 and 8.
+- `CEX_3D_Linear.m`: Figures 9-11, Table 3.
+- `CEX_3D_Linear_Noisy_Observations.fig`: Modification of Figure 9.
+- `EX_3D_EulerRigidBodyDynamics.m`: Figures 12-14.
+- `EX_TimeConsumptionAnalysis_Summary.m`: Figures 16-19. This script summarizes all relevent results in Section 3.5. The specific calculation procedure is as follows:
+ - `EX_TimeConsumptionAnalysis_SRBased_Low.m`: Symbolic regression based simulation for low-dimensional systems. This file generates the data for Figure Figures 16(a) and 16(b).
+ - `EX_TimeConsumptionAnalysis_FSINDyBased_Low.m`: FSINDy based simulation for low-dimensional systems. This file generates the data for Figures 16(c) and 16(d).
+ - `EX_TimeConsumptionAnalysis_SRBased_High.m`: FSINDy based simulation for some high-dimensional systems. This file generates the data for Figures 17(a) and 17(b).
+ - `EX_TimeConsumptionAnalysis_FSINDyBased_High.m`: Symbolic regression based simulation for some high-dimensional systems. This file generates the data for Figure Figures 17(c) and 17(d).
+ - `EX_TimeConsumptionAnalysis_SRBased_High_Lorenz96.m`: Symbolic regression based simulation for the Lorenz 96 system (dimension from 4 to 20). This file generates the data for Figures 18(a) and 18(b).
+ - `EX_TimeConsumptionAnalysis_FSINDyBased_High_Lorenz96.m`: FSINDy based simulation for the Lorenz 96 system (dimension from 4 to 20). This file generates the data for Figure Figures 18(c) and 18(d).
 
 **Notes:** For the purpose of fair comparison, the simulations based on symbolic regression and those based on FSINDy follow the same logic. This comparison ensures that no parameters are modified, and only the reconstruction program is replaced.
 ![Comparison flowchart](Figures/Comparison_flowchart.png)
@@ -197,6 +197,6 @@ Since our algorithm is a direct extension of SINDy, and also in order to conduct
 Copyright 2025, All Rights Reserved
 
 For Paper, 
-- "Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics" ,
+- "Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics",
 
 by Feng JIANG, Lin DU, Qing XUE, Zichen DENG, and Celso GREBOGI
