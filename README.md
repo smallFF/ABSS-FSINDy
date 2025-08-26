@@ -102,16 +102,16 @@ All figures and tables appear in the manuscript (except for the schematic diagra
 
 #### For the supporting information
 All figures and tables appear in the supporting information file.
-`EX_2D_Linear.m`: Figures 3-5, Table 2.
-`EX_2D_Cubic.m`: Figures 6-8, Table 3.
-`EX_2D_vanDerPol.m`: Figures 9-11, Table 4.
-`EX_3D_Rossler.m`: Figures 12-14, Table 5.
-`EX_3D_Lorenz.m`: Figures 15-17, Table 6.
-`CEX_3D_Linear.m`: Figures 18 and 19, Table 7.
-`EX_4D_Lotka_Volterra.m`: Figures 20-22. The identified coefficients can be found by running this program.
-`EX_4D_Hyper_Rossler.m`: Figures 23-25. The identified coefficients can be found by running this program.
-`EX_6D_Hyper_Coupled_Lorenz.m`: Figures 26-28. The identified coefficients can be found by running this program.
-`EX_HD_Lorenz_96_ErrorAnalysis_and_SingularValueAnalysis_For_SI.m`: This file generates the results for Figure 29 by changing variables.
+- `EX_2D_Linear.m`: Figures 3-5, Table 2.
+- `EX_2D_Cubic.m`: Figures 6-8, Table 3.
+- `EX_2D_vanDerPol.m`: Figures 9-11, Table 4.
+- `EX_3D_Rossler.m`: Figures 12-14, Table 5.
+- `EX_3D_Lorenz.m`: Figures 15-17, Table 6.
+- `CEX_3D_Linear.m`: Figures 18 and 19, Table 7.
+- `EX_4D_Lotka_Volterra.m`: Figures 20-22. The identified coefficients can be found by running this program.
+- `EX_4D_Hyper_Rossler.m`: Figures 23-25. The identified coefficients can be found by running this program.
+- `EX_6D_Hyper_Coupled_Lorenz.m`: Figures 26-28. The identified coefficients can be found by running this program.
+- `EX_HD_Lorenz_96_ErrorAnalysis_and_SingularValueAnalysis_For_SI.m`: This file generates the results for Figure 29 by changing variables.
 
 ## Core code (FSINDy) description
 We mainly developed programs for the pure polynomial basis library. Our program is module-independent and can be extracted separately for other purposes. As long as it meets the input requirements of our program, it can be used.
@@ -149,8 +149,8 @@ Then, use Anaconda to create a virtual environment and install as follows:
 where the `ps-demo` is the name of the virtual environment.
 
 Here are some Jupyter interactive files used to present our results.
-`Symbolic_Regression_based_EX_Lorenz96_HD.ipynb`: This program can be used to present the results (Lorenz 96 model) in the introduction section.
-`Symbolic_Regression_based_EX_Lorenz63_3D.ipynb`: This program presents the classical Lorenz 96 model for demonstration.
+- `Symbolic_Regression_based_EX_Lorenz96_HD.ipynb`: This program can be used to present the results (Lorenz 96 model) in the introduction section.
+- `Symbolic_Regression_based_EX_Lorenz63_3D.ipynb`: This program presents the classical Lorenz 96 model for demonstration.
 
 #### Install our developed version of PySINDy (FSINDy-based simulation)
 First, use command line to enter the folder as follows,
@@ -168,10 +168,10 @@ Then, use Anaconda to create a virtual environment and install as follows:
 where the `ps-dev` is the name of the virtual environment. 
 
 We provide four Jupyter interactive files to present our results and also show how to use our program.
-`FSINDy_based_EX_Hyper_Rossler_4D.ipynb`: A demonstration of the 4-dimensional Hyperchaotic Rössler model.
-`FSINDy_based_EX_Lorenz63_3D.ipynb`: A demonstration of the 3-dimensional Lorenz 63 model.
-`FSINDy_based_EX_Lorenz96_HD.ipynb`: A demonstration of the high-dimensional Lorenz 96 model. Readers can run this program and compare its time consumption with that of `Symbolic_Regression_based_EX_Lorenz96_HD.ipynb`. 
-`FSINDy_based_EX_Lotka_Volterra_4D.ipynb`: A demonstration of the 4-dimensional Lotka_Volterra model. 
+- `FSINDy_based_EX_Hyper_Rossler_4D.ipynb`: A demonstration of the 4-dimensional Hyperchaotic Rössler model.
+- `FSINDy_based_EX_Lorenz63_3D.ipynb`: A demonstration of the 3-dimensional Lorenz 63 model.
+- `FSINDy_based_EX_Lorenz96_HD.ipynb`: A demonstration of the high-dimensional Lorenz 96 model. Readers can run this program and compare its time consumption with that of `Symbolic_Regression_based_EX_Lorenz96_HD.ipynb`. 
+- `FSINDy_based_EX_Lotka_Volterra_4D.ipynb`: A demonstration of the 4-dimensional Lotka_Volterra model. 
 
 By running our program, readers will know how to use it. We also believe that they will be surprised that our developed method has achieved an astonishing improvement in terms of time efficiency.
 
