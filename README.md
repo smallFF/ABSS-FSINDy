@@ -69,18 +69,11 @@ In order to present the results in a thorough and comprehensive manner, this wor
     └─Modified_pysindy
         ├─pysindy
         │  ├─deeptime
-        │  │  └─__pycache__
         │  ├─differentiation
-        │  │  └─__pycache__
         │  ├─feature_library
-        │  │  └─__pycache__
         │  ├─optimizers
-        │  │  └─__pycache__
         │  ├─utils
-        │  │  └─__pycache__
-        │  └─__pycache__
         ├─pysindy.egg-info
-        └─__pycache__
 ```
 where the folder `Figures` contains the figures used in the README, the folder `MATLAB` contains the code of the MATLAB version, and the folder `Python` contains the symbolic regression-based PySINDy and our modified pysindy.
 
@@ -148,7 +141,9 @@ First, use command line to enter the folder as follows,
 
 Then, use Anaconda to create a virtual environment and install as follows:
 > conda create -n ps-demo python=3.10.14
+> 
 > conda activate ps-demo
+> 
 > pip install -r .\requirements.txt
 
 where the `ps-demo` is the name of the virtual environment.
@@ -163,8 +158,11 @@ First, use command line to enter the folder as follows,
 
 Then, use Anaconda to create a virtual environment and install as follows:
 > conda create -n ps-dev python=3.10.14
+> 
 > conda activate ps-dev
+> 
 > pip install -e .
+> 
 > pip install -r .\requirements.txt
 
 where the `ps-dev` is the name of the virtual environment. 
