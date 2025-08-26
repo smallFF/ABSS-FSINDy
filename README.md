@@ -104,7 +104,7 @@ All figures and tables appear in the manuscript (except for the schematic diagra
 - `EX_TimeConsumptionAnalysis_FSINDyBased_High_Lorenz96.m`: FSINDy based simulation for the Lorenz 96 system (dimension from 4 to 20). This file generates the data for Figure Figures 18(c) and 18(d).
 
 **Notes:** For the purpose of fair comparison, the simulations based on symbolic regression and those based on FSINDy follow the same logic. This comparison ensures that no parameters are modified, and only the reconstruction program is replaced.
-![Comparison flowchart](.\Figures\Comparison_flowchart.png)
+![Comparison flowchart](Figures/Comparison_flowchart.png)
 
 
 #### For the supporting information
@@ -131,7 +131,7 @@ We mainly developed programs for the pure polynomial basis library. Our program 
 We provide a demonstration on how to use our program with the 4-dimensional Lotka-Volterra model, as follows:
 - `Demo_4D_Lotka_Volterra.m`: A simple example demonstrates how to use our program. Run this file to see more details and results.
 - The core code snippet.
-    ![code snippet](.\Figures\demo_MATLAB.png)
+    ![code snippet](Figures/demo_MATLAB.png)
 
 The basic logic is as follows,
 1. Build the basis library according to the data.
