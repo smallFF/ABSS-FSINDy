@@ -1,0 +1,17 @@
+Dimension:  4, Run time: 0.46s
+Dimension:  5, Run time: 0.55s
+Dimension:  6, Run time: 0.56s
+Dimension:  7, Run time: 0.50s
+Dimension:  8, Run time: 0.62s
+Dimension:  9, Run time: 0.61s
+Dimension: 10, Run time: 0.68s
+Dimension: 11, Run time: 0.68s
+Dimension: 12, Run time: 0.71s
+Dimension: 13, Run time: 0.72s
+Dimension: 14, Run time: 0.75s
+Dimension: 15, Run time: 0.78s
+Dimension: 16, Run time: 0.81s
+Dimension: 17, Run time: 0.81s
+Dimension: 18, Run time: 0.82s
+Dimension: 19, Run time: 0.87s
+Dimension: 20, Run time: 0.86s

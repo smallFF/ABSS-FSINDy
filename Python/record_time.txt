@@ -1,0 +1,1 @@
+Dimension:  4, Run time: 108.31s
