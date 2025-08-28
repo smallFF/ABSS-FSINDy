@@ -184,6 +184,8 @@ set(gca, 'LineWidth', 1.5, 'FontName', 'Times');
 line([x_pos, x_pos], [0, max(cell_l2_error{ind})*1.1], 'lineStyle', '--', 'LineWidth', 2, 'HandleVisibility','off');
 xlim([3 dim(end)+1]);
 xticks(3:1:dim(end)+1);
+ax = gca;
+ax.YAxis(1).Exponent = 3;
 
 yyaxis right;
 semilogy(dim, cell_l2_error{ind}, 's-', 'LineWidth', 2, 'MarkerSize', 5)
@@ -192,7 +194,7 @@ ylabel('L2 Error of Key Features [log]', 'FontSize',12);
 legend('Left', 'Right', 'location', 'nw');
 
 if isOutputToFile
-    exportgraphics(gcf,[figpath,'EX_HD_Lorenz_96__eps_',num2str(eps),'_a.pdf'],'ContentType','vector', 'BackgroundColor','none');
+    exportgraphics(gcf,[figpath,'EX_HD_Lorenz_96_eps_',num2str(eps),'_a.pdf'],'ContentType','vector', 'BackgroundColor','none');
 end
 
 % figure;
@@ -216,5 +218,5 @@ ylabel('The 2-norm condition number [log]', 'FontSize',12);
 legend('Left', 'Right', 'location', 'nw')
 
 if isOutputToFile
-    exportgraphics(gcf,[figpath,'EX_HD_Lorenz_96__eps_',num2str(eps),'_b.pdf'],'ContentType','vector', 'BackgroundColor','none');
+    exportgraphics(gcf,[figpath,'EX_HD_Lorenz_96_eps_',num2str(eps),'_b.pdf'],'ContentType','vector', 'BackgroundColor','none');
 end

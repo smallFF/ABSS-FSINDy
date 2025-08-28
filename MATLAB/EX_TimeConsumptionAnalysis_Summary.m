@@ -30,10 +30,10 @@ T_list = [25, 25, 25, 50, 50, 50]'/dt;
 Dim = [2, 2, 2, 3, 3, 3]';
 
 % %% =================================================================================================
-figure('Units', 'centimeters', 'Position', [2 2 17 17]);
-tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
+figure('Units', 'centimeters', 'Position', [2 2 40 10]);
+tiledlayout(1,4,'Padding','compact','TileSpacing','compact');
 
-FontSize = 12;
+FontSize = 14;
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2;
 
@@ -48,10 +48,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_SRBasedLD.Model)
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (b)
 nexttile;
@@ -65,10 +65,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_SRBasedLD.Model)
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (c)
 nexttile;
@@ -81,10 +81,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_FSINDyEnhancedLD.Model)
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 %% subfig: (d)
 nexttile;
 bar(1:length(T_FSINDyEnhancedLD.Model), T_FSINDyEnhancedLD.Mean./(T_list.*Dim), 'EdgeColor', 'none', 'FaceColor', '#D77071');
@@ -97,10 +97,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_FSINDyEnhancedLD.Model)
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 if isOutputToFile
     exportgraphics(gcf,[figpath, baseFileName,'_Summary_LowDimension.pdf'],'ContentType','vector', 'BackgroundColor', 'none');
@@ -111,10 +111,10 @@ dt = 0.01;
 T_list = [500, 200, 200, 15]'/dt;
 Dim = [4, 4, 6, 8]';
 
-figure('Units', 'centimeters', 'Position', [2 2 17 17]);
-tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
+figure('Units', 'centimeters', 'Position', [2 2 40 10]);
+tiledlayout(1,4,'Padding','compact','TileSpacing','compact');
 
-FontSize = 11;
+FontSize = 14;
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2;
 
@@ -129,10 +129,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_SRBasedHD.Model)
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (b)
 nexttile;
@@ -146,10 +146,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_SRBasedHD.Model)
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (c)
 nexttile;
@@ -163,10 +163,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_FSINDyEnhancedHD.Model)
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (d)
 nexttile;
@@ -180,10 +180,10 @@ er.LineStyle = 'none';
 box off
 grid on
 xticklabels(T_FSINDyEnhancedHD.Model)
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 if isOutputToFile
     exportgraphics(gcf,[figpath, baseFileName,'_Summary_HighDimension.pdf'],'ContentType','vector', 'BackgroundColor', 'none');
@@ -194,15 +194,15 @@ dt = 0.01;
 T_list = 15*ones(17,1)/dt;
 Dim = [4:20]';
 
-figure('Units', 'centimeters', 'Position', [2 2 17 17]);
-tiledlayout(2,4,'TileSpacing', 'compact','Padding','compact');
+figure('Units', 'centimeters', 'Position', [2 2 40 10]);
+tiledlayout(1,4,'TileSpacing', 'compact','Padding','compact');
 
-FontSize = 12;
+FontSize = 14;
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2;
 
 %% subfig: (a)
-nexttile([1 2]);
+nexttile;
 bar(4:20, T_SRBasedHighLorenz96.Mean, 'EdgeColor', 'none', 'FaceColor', '#6888F5');
 
 hold on;
@@ -214,13 +214,13 @@ box off
 grid on
 xticks(4:20)
 xlabel('Dimension')
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(a)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (b)
-nexttile([1 2]);
+nexttile;
 bar(4:20, T_SRBasedHighLorenz96.Mean./(T_list.*Dim), 'EdgeColor', 'none', 'FaceColor', '#6888F5');
 
 hold on;
@@ -232,13 +232,13 @@ box off
 grid on
 xticks(4:20)
 xlabel('Dimension')
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(b)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (c)
-nexttile([1 2]);
+nexttile;
 bar(4:20, T_FSINDyEnhancedHighLorenz96.Mean, 'EdgeColor', 'none', 'FaceColor', '#D77071');
 
 hold on;
@@ -250,13 +250,13 @@ box off
 grid on
 xticks(4:20)
 xlabel('Dimension')
-ylabel('Average simulation time (s)')
+ylabel('AST (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
-title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(c)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 %% subfig: (d)
-nexttile([1 2]);
+nexttile;
 bar(4:20, T_FSINDyEnhancedHighLorenz96.Mean./(T_list.*Dim), 'EdgeColor', 'none', 'FaceColor', '#D77071');
 
 hold on;
@@ -269,11 +269,11 @@ grid on
 xticks(4:20)
 ylim([0 1.2e-5]);
 xlabel('Dimension')
-ylabel('Average simulation time per step (s)')
+ylabel('ASTPS (s)')
 set(gca, 'FontSize', FontSize, 'FontName', 'Times', 'LineWidth', OuterLineWidth)
 
 
-title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.91, 0], 'FontWeight', 'bold');
+title('(d)', 'Units', 'normalized', 'Position', [0.055, 0.90, 0], 'FontWeight', 'bold');
 
 if isOutputToFile
     exportgraphics(gcf,[figpath, baseFileName,'_Summary_HighLorenz96.pdf'],'ContentType','vector', 'BackgroundColor', 'none');
@@ -283,14 +283,13 @@ end
 figure('Units', 'centimeters', 'Position', [2 2 17 17]);
 tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
 
-FontSize = 12;
+FontSize = 14;
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2; 
 
 nexttile;
 semilogy(1:length(T_SRBasedLD.Model), T_SRBasedLD.Mean ./ T_FSINDyEnhancedLD.Mean, ...
     '-o', 'LineWidth', InnerLineWidth, 'MarkerSize', 10, 'MarkerFaceColor','#D77071','MarkerEdgeColor','none');
-
 
 box off
 grid on
@@ -310,7 +309,7 @@ set(gca, 'LineWidth', 1.5,...
     'YMinorTick', 'on',...
     'Box', 'off');                    
 
-title('(a)', 'Units', 'normalized', 'Position', [0.075, 0.93, 0], 'FontWeight', 'bold');
+title('(a)', 'Units', 'normalized', 'Position', [0.075, 0.90, 0], 'FontWeight', 'bold');
 
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2; 
@@ -337,7 +336,7 @@ set(gca, 'LineWidth', 1.5,...
     'YMinorTick', 'on',...
     'Box', 'off');                    
 
-title('(b)', 'Units', 'normalized', 'Position', [0.075, 0.93, 0], 'FontWeight', 'bold');
+title('(b)', 'Units', 'normalized', 'Position', [0.075, 0.90, 0], 'FontWeight', 'bold');
 
 InnerLineWidth = 1.5;
 OuterLineWidth = 1.2; 
@@ -363,7 +362,7 @@ set(gca, 'LineWidth', 1.5,...
     'YMinorTick', 'on',...
     'Box', 'off');                    
 
-title('(c)', 'Units', 'normalized', 'Position', [0.035, 0.93, 0], 'FontWeight', 'bold');
+title('(c)', 'Units', 'normalized', 'Position', [0.035, 0.90, 0], 'FontWeight', 'bold');
 
 if isOutputToFile
     exportgraphics(gcf,[figpath, baseFileName,'_Summary_SpeedUpRatio.pdf'],'ContentType','vector', 'BackgroundColor', 'none');

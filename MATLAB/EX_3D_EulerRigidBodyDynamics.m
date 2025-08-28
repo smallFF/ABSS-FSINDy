@@ -79,9 +79,8 @@ end
 number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
 
 figure('Units', 'centimeters', 'Position', [3 3 17 15]);
-t1 = tiledlayout(n, 1);
-t1.TileSpacing = 'compact';
-t1.Padding = 'compact';
+t1 = tiledlayout(n, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+fontsize = 13;
 for i = 1:n
     eval(['ax',num2str(i),'=nexttile;']);
     yyaxis left;
@@ -95,7 +94,7 @@ for i = 1:n
     ylim( [yrange_extend(y2)] );
     
     grid minor;
-    set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
     ylabel(['X_',num2str(i)], 'FontSize',12);
     
     title(number_label{i}, 'Units', 'normalized', 'Position', [0.04, 0.7, 0], 'FontWeight', 'bold');
@@ -139,15 +138,19 @@ for i = 1:n
     semilogx(x2, y2, 'b^', 'MarkerSize', 10);
     xlim(xlim_range);
 
-    text(2*xlim_range(1)/10, -i, ['X_',num2str(i)]);
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
+
+    text(2*xlim_range(1)/10, -i, ['X_',num2str(i)], 'FontSize', fontsize);
     set(gca, 'yTick', [], 'FontName', 'Times');
 
     if i == 1
         grid minor;
     end
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xticks([10^(-4), 10^(-2), 10^(0), 10^(2), 10^(4), 10^(6), 10^(8)])
+xticklabels({'10^{-4}','10^{-2}','10^{0}','10^{2}','10^{4}','10^{6}','10^{8}'})
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',fontsize)
+legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 if isOutputToFile
@@ -188,9 +191,9 @@ for i = 1:n
     xlim(xlim_range);
     
     
-    set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
 
-    text(3*xlim_range(1)/10, -i, ['X_{',num2str(i),'}']);
+    text(3*xlim_range(1)/10, -i, ['X_{',num2str(i),'}'], 'FontSize', fontsize);
 
     text(lowerBoundary, -i+0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', 12, 'Interpreter','latex');
 
@@ -201,8 +204,10 @@ for i = 1:n
         grid minor;
     end
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xticks([10^(-4), 10^(-3), 10^(-2), 10^(-1), 10^(0), 10^(1), 10^(2), 10^(3)])
+xticklabels({'10^{-4}','10^{-3}','10^{-2}','10^{-1}','10^{0}','10^{1}','10^{2}','10^{3}'})
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize', fontsize)
+legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 
@@ -261,7 +266,7 @@ for i = 1:n
     tmp_YLim = [min(min(x_true(:,i))), max(max(x_true(:,i)))];
     ylim(yrange_extend(tmp_YLim,0.1,0.05))
     set(ax, 'LineWidth', 1.5,...          
-        'FontSize', 12,...                
+        'FontSize', fontsize,...                
         'TickDir', 'out',...              
         'TickLength', [0.015 0.015],...   
         'XMinorTick', 'on',...            
@@ -274,11 +279,11 @@ for i = 1:n
     ax.GridColor = [0.4 0.4 0.4];
     
     ylabel(['X_',num2str(i)],...
-        'FontSize', 12,...
+        'FontSize', fontsize,...
         'FontWeight', 'normal');
 
     title(number_label{i},...
-        'FontSize', 12,...
+        'FontSize', fontsize,...
         'HorizontalAlignment', 'left',...
         'Units', 'normalized',...
         'Position', [0.012 0.88],...       
@@ -286,14 +291,14 @@ for i = 1:n
 end
 
 xlabel(t3, 'Time (s)',...                 
-    'FontSize', 12,...
+    'FontSize', fontsize,...
     'FontWeight', 'normal');
 
 leg = legend(ax, {'True','Identified'},...
     'Box', 'off',...
     'Orientation', 'horizontal',...
     'Position', [0.35 0.97 0.5 0.03],...  
-    'FontSize', 12);
+    'FontSize', fontsize);
 leg.ItemTokenSize = [15,5];               
 
 if isOutputToFile

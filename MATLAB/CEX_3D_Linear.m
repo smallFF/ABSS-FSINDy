@@ -1,7 +1,7 @@
 clear, clc, close all;
 addpath('./utils');
 figpath = './figures/';
-isOutputToFile = 1; % Switch for outputting figures in PDF format.
+isOutputToFile = 0; % Switch for outputting figures in PDF format.
 baseFileName = 'CEX_3D_Linear';
 
 %% generate Data
@@ -102,8 +102,6 @@ for k = 1:3
     end
 end
 
-number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
-
 figure('Units', 'centimeters', 'Position', [5 5 17 22]); 
 t1 = tiledlayout(n, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
 for i = 1:n
@@ -112,7 +110,7 @@ for i = 1:n
     y1 = history.objval{i}(:);
     plot(y1, '-', 'LineWidth',2, 'Marker', '*', 'MarkerSize', 10);
     ylim( [yrange_extend(y1)] );
-    
+
     yyaxis right;
     y2 = history.MRE{i}(:);
     plot(y2, '.-', 'LineWidth',2, 'Marker', 'o', 'MarkerSize', 10);
@@ -126,8 +124,6 @@ end
 xlabel('Iterations', 'FontSize',20)
 legend(ax1, 'Objective Value', 'Modified Relative Error', 'Location', 'northoutside', 'Orientation', 'horizontal');
 legend(ax1, 'boxoff');
-
-% set(gcf, 'Position', [200, 100, 1200, 900])
 
 if isOutputToFile
     exportgraphics(t1,[figpath, baseFileName,'_MRE.pdf'],'ContentType','vector');
@@ -273,34 +269,6 @@ mg = ModelGenerate(Charset, Xi, func_name);
 delete([func_name,'.m']);
 
 %% Figures
-% number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
-% 
-% figure;
-% t3 = tiledlayout(n, 1);
-% t3.TileSpacing = 'compact';
-% for i = 1:n
-%     eval(['ax',num2str(i),'=nexttile;']);
-%     tmp_1 = x_true(:, i);
-%     plot(t_span, tmp_1, 'r-', 'LineWidth',1.5);
-%     hold on;
-%     ylim( [yrange_extend(tmp_1)] );
-% 
-%     tmp_2 = x_identified(:,i);
-%     plot(t_span, tmp_2, 'b--', 'LineWidth',1.5);
-%     ylim( [yrange_extend(tmp_2)] );
-% 
-%     set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
-%     ylabel(['X_',num2str(i)], 'FontSize',12);
-% 
-%     title(number_label{i}, 'Units', 'normalized', 'Position', [0.04, 0.7, 0], 'FontWeight', 'bold');
-% 
-%     fprintf('X_%d: RMSE=%.6f\n', i, error_func(tmp_1, tmp_2, 'rmse'));
-% end
-% xlabel('Time', 'FontSize',12)
-% legend(ax1, 'True', 'Identified', 'Location', 'northoutside', 'Orientation', 'horizontal');
-% legend(ax1, 'boxoff');
-
-%%
 number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
 
 figure('Units', 'centimeters', 'Position', [5 5 17 15]); 
@@ -326,9 +294,6 @@ for i = 1:n
     
     tmp_1 = x_true(:,i);
     tmp_2 = x_identified(:,i);
-    % fprintf('X_%d: RMSE=%.6f\n', i, error_func(tmp_1, tmp_2, 'rmse'));
-    % fprintf('X_%d: T=[0, %.2f] RMSE=%.6f\n', i, validPredTime, ...
-    %     error_func(tmp_1(1:validPredInd), tmp_2(1:validPredInd), 'rmse'));
 
     tmp_YLim = [min(min(x_true(:,i))), max(max(x_true(:,i)))];
     ylim(yrange_extend(tmp_YLim,0.1,0.05))
@@ -347,7 +312,7 @@ for i = 1:n
     
     ylabel(['X_',num2str(i)],...
         'FontSize', 12,...
-        'FontWeight', 'normal')%,...
+        'FontWeight', 'normal');
 
     title(number_label{i},...
         'FontSize', 12,...

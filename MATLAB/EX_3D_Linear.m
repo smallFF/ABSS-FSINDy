@@ -1,7 +1,7 @@
 clear, clc, close all;
 addpath('./utils');
 figpath = './figures/';
-isOutputToFile = 0; % Switch for outputting figures in PDF format.
+isOutputToFile = 1; % Switch for outputting figures in PDF format.
 
 %% generate Data
 polyorder = 2;
@@ -45,8 +45,8 @@ baseFileName = mfilename;
 number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
 
 figure;
-t1 = tiledlayout(n, 1);
-t1.TileSpacing = 'compact';
+t1 = tiledlayout(n, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+fontsize = 13;
 for i = 1:n
     eval(['ax',num2str(i),'=nexttile;']);
     yyaxis left;
@@ -54,7 +54,6 @@ for i = 1:n
     plot(y1, '-', 'LineWidth',1.5, 'Marker', '*', 'MarkerSize', 10);
     ylim( [yrange_extend(y1)] );
     xlim([0 10])
-
     
     yyaxis right;
     y2 = history.MRE{i}(:);
@@ -62,8 +61,8 @@ for i = 1:n
     ylim( [yrange_extend(y2)] );
     
     
-    set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
-    ylabel(['X_',num2str(i)], 'FontSize',12);
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
+    ylabel(['X_',num2str(i)], 'FontSize',fontsize);
     xlim([0 10])
 
     xticks(0:10);
@@ -75,12 +74,16 @@ for i = 1:n
     ax.GridLineStyle = ':';
     ax.GridAlpha = 0.3;
     ax.GridColor = [0.4 0.4 0.4];
-    ax.XMinorGrid = 'on';
+    ax.XMinorGrid = 'off';
     ax.YMinorGrid = 'off';
-end
-xlabel('Iterations', 'FontSize',12)
 
-legend(ax1, 'Objective Value', 'Modified Relative Error', 'Location', 'northoutside', 'Orientation', 'horizontal');
+    % if i < n
+    %     set(gca, "XTick", [])
+    % end
+end
+xlabel('Iterations', 'FontSize', fontsize)
+
+legend(ax1, 'Objective Value', 'Modified Relative Error', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', fontsize);
 legend(ax1, 'boxoff');
 
 if isOutputToFile
@@ -111,15 +114,19 @@ for i = 1:n
     semilogx(x2, y2, 'b^', 'MarkerSize', 10);
     xlim(xlim_range);
 
-    text(4*xlim_range(1)/10, -i, ['X_',num2str(i)]);
-    set(gca, 'yTick', []);
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
+
+    text(4*xlim_range(1)/10, -i, ['X_',num2str(i)], 'FontSize', fontsize);
+    set(gca, 'yTick', [], 'FontName', 'Times');
 
     if i == 1
         grid minor;
     end
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xticks([10^(-4), 10^(-3), 10^(-2), 10^(-1), 10^(0), 10^(1)])
+xticklabels({'10^{-4}','10^{-3}','10^{-2}','10^{-1}','10^{0}','10^{1}'})
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize', fontsize)
+legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 if isOutputToFile
@@ -158,11 +165,11 @@ for i = 1:n
     xlim(xlim_range);
     
     
-    set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
 
-    text(4*xlim_range(1)/10, -i, ['X_{',num2str(i),'}']);
+    text(4*xlim_range(1)/10, -i, ['X_{',num2str(i),'}'], 'FontSize', fontsize);
 
-    text(lowerBoundary, -i+0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', 12, 'Interpreter','latex');
+    text(lowerBoundary, -i+0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', fontsize, 'Interpreter','latex');
 
     set(gca, 'yTick', [], 'FontName', 'Times');
 
@@ -170,9 +177,12 @@ for i = 1:n
         hold on;
         grid minor;
     end
+    
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xticks([10^(-4), 10^(-3), 10^(-2), 10^(-1), 10^(0), 10^(1)])
+xticklabels({'10^{-4}','10^{-3}','10^{-2}','10^{-1}','10^{0}','10^{1}'})
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize', fontsize)
+legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 
@@ -188,7 +198,7 @@ end
 line([Pi_min, Pi_min], [-(n+1), 0], 'lineStyle', '--', 'HandleVisibility','off');
 line([Pi_max, Pi_max], [-(n+1), 0], 'lineStyle', '--', 'HandleVisibility','off');
 
-text(Pi_min, -n-0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', 12, 'Interpreter','latex');
+text(Pi_min, -n-0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', fontsize, 'Interpreter','latex');
 
 if isOutputToFile
     exportgraphics(gcf,[figpath, baseFileName,'_b.pdf'],'ContentType','vector', 'BackgroundColor','none');
@@ -205,21 +215,17 @@ delete([func_name,'.m']);
 %% Figures
 number_label = {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'};
 
-
 figure('Units', 'centimeters', 'Position', [5 5 17 15]); 
 t3 = tiledlayout(n, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
-
 
 set(groot, 'defaultAxesFontName', 'Times New Roman',...  
     'defaultTextFontName', 'Times New Roman',...
     'defaultAxesLabelFontSizeMultiplier', 1.1,...n
     'defaultAxesTitleFontSizeMultiplier', 1.2);
 
-
 lineStyle = struct(...
     'True', {'Color', [0.2 0.4 0.8], 'LineWidth', 2.5, 'LineStyle', '-'},... 
     'Identified', {'Color', [0.9 0.4 0.1], 'LineWidth', 2, 'LineStyle', '--'}); 
-
 
 commonYLim = [min(min(x_true)), max(max(x_true))]; 
 
@@ -237,13 +243,12 @@ for i = 1:n
     tmp_YLim = [min(min(x_true(:,i))), max(max(x_true(:,i)))];
     ylim(yrange_extend(tmp_YLim,0.1,0.05))
     set(ax, 'LineWidth', 1.5,...          
-        'FontSize', 12,...                
+        'FontSize', fontsize,...                
         'TickDir', 'out',...              
         'TickLength', [0.015 0.015],...   
         'XMinorTick', 'on',...            
         'YMinorTick', 'on',...
         'Box', 'off');                    
-    
     
     grid(ax, 'on');
     ax.GridLineStyle = ':';
@@ -251,20 +256,23 @@ for i = 1:n
     ax.GridColor = [0.4 0.4 0.4];
     
     ylabel(['X_',num2str(i)],...
-        'FontSize', 12,...
+        'FontSize', fontsize,...
         'FontWeight', 'normal')%,...
-
     
     title(number_label{i},...
-        'FontSize', 12,...
+        'FontSize', fontsize,...
         'HorizontalAlignment', 'left',...
         'Units', 'normalized',...
         'Position', [0.012 0.85],...       
         'FontWeight', 'bold');
+
+    % if i < n
+    %     set(gca, "XTick", [])
+    % end
 end
 
 xlabel(t3, 'Time (s)',...                 
-    'FontSize', 12,...
+    'FontSize', fontsize,...
     'FontWeight', 'normal');
 
 
@@ -272,7 +280,7 @@ leg = legend(ax, {'True','Identified'},...
     'Box', 'off',...
     'Orientation', 'horizontal',...
     'Position', [0.35 0.97 0.5 0.03],...  
-    'FontSize', 12);
+    'FontSize', fontsize);
 leg.ItemTokenSize = [15,5];               
 
 

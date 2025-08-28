@@ -10,7 +10,7 @@ usesine = 0;
 F = 8;
 
 % n = 4, 10, 15
-n = 10;
+n = 15;
 
 x0 = 8*ones(1, n);
 x0(1) = 1;
@@ -66,8 +66,8 @@ end
 baseFileName = mfilename;
 
 figure('Units', 'centimeters', 'Position', [2 2 17 22.5]);
-t1 = tiledlayout(n, 1);
-t1.TileSpacing = 'compact';
+t1 = tiledlayout(n, 1, 'TileSpacing', 'compact', 'Padding', 'compact');
+fontsize = 13;
 for i = 1:n
     eval(['ax',num2str(i),'=nexttile;']);
     yyaxis left;
@@ -110,15 +110,17 @@ for i = 1:n
 
     semilogx(x2, y2, 'b^', 'MarkerSize', 10);
 
-    text(4*xlim_range(1)/10, -i, ['X_{',num2str(i),'}']);
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
+
+    text(3.5*xlim_range(1)/10, -i, ['X_{',num2str(i),'}'], 'FontSize', fontsize);
     set(gca, 'yTick', [], 'FontName', 'Times');
 
     if i == 1
         grid minor;
     end
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',fontsize)
+legend(gca, 'Initial Least-square Estimation', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 if isOutputToFile
@@ -155,9 +157,9 @@ for i = 1:n
     semilogx(x2, y2, 'b^');
     xlim(xlim_range);  
     
-    set(gca, 'LineWidth',1.2, 'FontSize', 12, 'FontName', 'Times');
+    set(gca, 'LineWidth',1.2, 'FontSize', fontsize, 'FontName', 'Times');
 
-    text(4*xlim_range(1)/10, -i, ['X_{',num2str(i),'}']);
+    text(3.5*xlim_range(1)/10, -i, ['X_{',num2str(i),'}'], 'FontSize', fontsize);
 
     text(lowerBoundary, -i+0.25, str_Pi, 'FontName', 'Times', 'FontWeight', 'Bold', 'FontSize', 10, 'Interpreter','latex');
 
@@ -168,8 +170,8 @@ for i = 1:n
         grid minor;
     end
 end
-xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize',12)
-legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 11);
+xlabel('Absolute value of coefficients (logarithmic coordinate)', 'FontSize', fontsize)
+legend(gca, 'Redundant Features', 'Threshold Interval', 'Key Features', 'Location', 'northoutside', 'Orientation', 'horizontal', 'FontSize', 12);
 legend(gca, 'boxoff');
 ylim([-(n+1) 0]);
 
