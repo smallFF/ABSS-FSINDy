@@ -160,9 +160,13 @@ Then, use Anaconda to create a virtual environment and install as follows:
 > conda create -n ps-dev python=3.10.14
 > 
 > conda activate ps-dev
-> 
-> pip install -e .
-> 
+
+> If you run Anaconda in the PowerShell command line, please use the following command:
+>> $env:SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PYSINDY = "1.0.0"; pip install -e . 
+>
+> If you run Anaconda in the CMD command line, please use the following command:
+>> set SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PYSINDY=1.0.0 && pip install -e .
+
 > pip install -r .\requirements.txt
 
 where the `ps-dev` is the name of the virtual environment. 
@@ -181,6 +185,8 @@ Since our MATLAB code is mainly based on the original SINDy method, the related 
 The Python version of the code is based on the mature PySINDy framework, which is maintained by researchers from the community. Currently, it is still under rapid development. Therefore, I can only make limited modifications. The example program I provided above is mainly used to demonstrate the effectiveness of our method and how to directly use the code.
 
 If there are any issues when using the relevant code, please feel free to contact the corresponding author by email. We will do our best to continuously maintain this code, in order to facilitate our research in making contributions to the relevant community.
+
+Finally, to ensure the maximum reproducibility and consistency of the code, we have also packaged our code into a Docker image. Due to the space limitations of GitHub, we are unable to upload the complete image. If you encounter any problems when using the code in the future, you can also contact us via email. This solution will ensure that our code can run on any platform that supports Docker.
 
 ## The referenced code implementation
 Since our algorithm is a direct extension of SINDy, and also in order to conduct a more comprehensive and fair comparison, we referenced previous works when conducting numerical experiments. Some code implementations directly or indirectly referred to the following related works. Those interested in the original method can refer to the following articles and codes.
