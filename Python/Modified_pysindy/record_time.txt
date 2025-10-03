@@ -1,17 +1,48 @@
-Dimension:  4, Run time: 0.46s
-Dimension:  5, Run time: 0.55s
-Dimension:  6, Run time: 0.56s
-Dimension:  7, Run time: 0.50s
-Dimension:  8, Run time: 0.62s
-Dimension:  9, Run time: 0.61s
-Dimension: 10, Run time: 0.68s
-Dimension: 11, Run time: 0.68s
-Dimension: 12, Run time: 0.71s
-Dimension: 13, Run time: 0.72s
-Dimension: 14, Run time: 0.75s
-Dimension: 15, Run time: 0.78s
-Dimension: 16, Run time: 0.81s
-Dimension: 17, Run time: 0.81s
-Dimension: 18, Run time: 0.82s
-Dimension: 19, Run time: 0.87s
-Dimension: 20, Run time: 0.86s
+Dimension: 4, Run time: 0.47s (once)
+==================================================
+Dimension: 4, STATISTICAL SUMMARY (100 runs)
+--------------------------------------------------
+Mean running time:    0.454223s
+Minimum running time: 0.446001s
+Maximum running time: 0.486340s
+Standard deviation:   0.008084s
+Median running time:  0.451234s
+Total time for 100 runs: 45.422308s
+==================================================
+
+Dimension: 10, Run time: 0.63s (once)
+==================================================
+Dimension: 10, STATISTICAL SUMMARY (100 runs)
+--------------------------------------------------
+Mean running time:    0.642832s
+Minimum running time: 0.621849s
+Maximum running time: 0.901197s
+Standard deviation:   0.036870s
+Median running time:  0.630804s
+Total time for 100 runs: 64.283215s
+==================================================
+
+Dimension: 15, Run time: 0.79s (once)
+==================================================
+Dimension: 15, STATISTICAL SUMMARY (100 runs)
+--------------------------------------------------
+Mean running time:    0.765388s
+Minimum running time: 0.750776s
+Maximum running time: 0.890665s
+Standard deviation:   0.017907s
+Median running time:  0.760271s
+Total time for 100 runs: 76.538796s
+==================================================
+
+Dimension: 20, Run time: 0.89s (once)
+==================================================
+Dimension: 20, STATISTICAL SUMMARY (100 runs)
+--------------------------------------------------
+Mean running time:    0.873662s
+Minimum running time: 0.858338s
+Maximum running time: 0.915848s
+Standard deviation:   0.010427s
+Median running time:  0.870350s
+Total time for 100 runs: 87.366244s
+==================================================
+
