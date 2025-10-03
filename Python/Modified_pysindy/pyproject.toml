@@ -96,3 +96,4 @@ packages = ["pysindy"]
 
 [tool.setuptools_scm]
 write_to = "pysindy/version.py"
+fallback_version = "1.7.6.dev346"
