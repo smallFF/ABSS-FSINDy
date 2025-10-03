@@ -160,13 +160,9 @@ Then, use Anaconda to create a virtual environment and install as follows:
 > conda create -n ps-dev python=3.10.14
 > 
 > conda activate ps-dev
-
-> If you run Anaconda in the PowerShell command line, please use the following command:
->> $env:SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PYSINDY = "1.0.0"; pip install -e . 
 >
-> If you run Anaconda in the CMD command line, please use the following command:
->> set SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PYSINDY=1.0.0 && pip install -e .
-
+> pip install -e .
+>
 > pip install -r .\requirements.txt
 
 where the `ps-dev` is the name of the virtual environment. 
@@ -178,6 +174,9 @@ We provide four Jupyter interactive files to present our results and also show h
 - `FSINDy_based_EX_Lotka_Volterra_4D.ipynb`: A demonstration of the 4-dimensional Lotka_Volterra model. 
 
 By running our program, readers will know how to use it. We also believe that they will be surprised that our developed method has achieved an astonishing improvement in terms of time efficiency.
+
+**Notes:** Recently, the author added new code to the `FSINDy_based_EX_Lorenz96_HD.ipynb` file. The main function is to perform 100 calculations and then compare the time consumption statistically to eliminate the differences in a single run. These results are not presented in the paper. They are merely used to supplement and elaborate on the validity and reliability of the code. Due to the significant differences in time consumption calculation across various platforms, other researchers can directly verify the performance improvement on their computers. The result is shown as follows:
+![distribution of running times](Figures/Distribution_of_running_times.png)
 
 ### Additional remarks
 Since our MATLAB code is mainly based on the original SINDy method, the related code structure is more concise and clear. We have developed a large number of code modules and independent modules to ensure that they can run on any computer.
