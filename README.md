@@ -1,4 +1,31 @@
-This repository contains code from our paper "Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics".
+This repository contains code from our paper "Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics." If you directly or indirectly use our results, please cite our work.
+
+**Citation format:**
+Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46, 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
+
+```
+@article{jiangAdaptiveBackwardStepwise2025,
+  title = {Adaptive Backward Stepwise Selection of Fast Sparse Identification of Nonlinear Dynamics},
+  author = {Jiang, Feng and Du, Lin and Xue, Qing and Deng, Zichen and Grebogi, C.},
+  year = 2025,
+  month = dec,
+  journal = {Applied Mathematics and Mechanics},
+  volume = {46},
+  number = {12},
+  pages = {2361--2384},
+  issn = {0253-4827},
+  doi = {10.1007/s10483-025-3320-7}
+}
+```
+
+Main manuscript can be found below the link:
+[https://link.springer.com/article/10.1007/s10483-025-3320-7](https://link.springer.com/article/10.1007/s10483-025-3320-7)
+
+Electronic supplementary material can be found below the link:
+[https://link.springer.com/article/10.1007/s10483-025-3320-7#Sec1](https://link.springer.com/article/10.1007/s10483-025-3320-7#Sec1)
+
+
+---
 
 Table of contents
 - [Numerical experiments](#numerical-experiments)
@@ -205,3 +232,6 @@ For Paper,
 - "Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics",
 
 by Feng JIANG, Lin DU, Qing XUE, Zichen DENG, and Celso GREBOGI
+
+
+Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46, 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
