@@ -2,7 +2,7 @@ This repository contains code from our paper "Adaptive backward stepwise selecti
 
 **Citation format:**
 
-Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46, 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
+Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46(12), 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
 
 ```
 @article{jiangAdaptiveBackwardStepwise2025,
@@ -240,5 +240,5 @@ by Feng JIANG, Lin DU, Qing XUE, Zichen DENG, and Celso GREBOGI
 
 **Citation format:**
 
-Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46, 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
+Jiang, F., Du, L., Xue, Q. Deng, Z. C., Grebogi, C. Adaptive backward stepwise selection of fast sparse identification of nonlinear dynamics. Appl. Math. Mech.-Engl. Ed. 46(12), 2361–2384 (2025). https://doi.org/10.1007/s10483-025-3320-7
 
